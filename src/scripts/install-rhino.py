@@ -1,1 +1,2 @@
-print ("TEST")
+import wget
+print ("test installs")
