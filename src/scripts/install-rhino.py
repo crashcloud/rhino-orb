@@ -1,1 +1,1 @@
-print ("TEST")
+print ("test installs")
