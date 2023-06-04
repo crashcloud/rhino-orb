@@ -22,4 +22,3 @@ steps:
   - run: py py/download-rhino.py -v <<parameters.version>> -fv <<parameters.fullversion>> -c <<parameters.culture>>
 
   - run: py py/download-rhino.py -l CORE -tk <<parameters.token>>
-
