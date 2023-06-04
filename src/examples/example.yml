@@ -1,13 +1,16 @@
-description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+description: This is an example of running a simple job on the default executor
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    <orb-name>: crashcloud/rhino@0.1.1
+  jobs:
+    build:
+      executor:
+        name: rhino/default
+      steps:
+        - checkout
+        - run: Write-Host 'Hello, Rhino Dev Environment'
   workflows:
-    use-my-orb:
+    my-workflow:
       jobs:
-        - <orb-name>/<job-name>
+        - build
