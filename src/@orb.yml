@@ -1,15 +1,14 @@
 version: 2.1
 
 description: >
-  Sample orb description
-# What will your orb allow users to accomplish?
-# Descriptions should be short, simple, and informative.
+  Creates a base Windows image with Rhino installed
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://www.example.com/docs"
+  home_url: "http://crsh.cloud"
   source_url: "https://github.com/crashcloud/rhino-orb"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 orbs:
   win: circleci/windows@5.0
+  python: circleci/python@2.1.1
