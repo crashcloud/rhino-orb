@@ -8,8 +8,8 @@ description: >
 # This information will be displayed in the orb registry and is not mandatory.
 display:
   home_url: "https://www.example.com/docs"
-  source_url: "https://github.com/<organization>/<project-name>"
+  source_url: "https://github.com/crashcloud/rhino-orb"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
-# orbs:
-#  hello: circleci/hello-build@0.0.5
+orbs:
+  win: circleci/windows@5.0
