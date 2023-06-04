@@ -21,12 +21,12 @@ steps:
     command: >-
       git clone https://github.com/crashcloud/rhino-setup.git
 
-  -run:
+  - run:
     name: Download Rhino
     command: >-
       py py/download-rhino.py -v <<parameters.version>> -fv <<parameters.fullversion>> -c <<parameters.culture>>
 
-  -run:
+  - run:
     name: Install Rhino
     command: >-
       py py/download-rhino.py -l CORE -tk <<parameters.token>>
