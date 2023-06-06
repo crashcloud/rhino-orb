@@ -1,0 +1,1 @@
+python3 py/install-rhino.py -l CORE -tk TOKEN

@@ -19,12 +19,12 @@ steps:
 
   - run:
       name: Clone Setup
-      command: git clone https://github.com/crashcloud/rhino-setup.git
+      command: <<include(scripts/clone.sh)>> 
 
   - run:
       name: Download Rhino
-      command: python3 py/download-rhino.py -v <<parameters.version>> -fv <<parameters.fullversion>> -c <<parameters.culture>>
+      command: <<include(scripts/download.sh)>>
 
   - run:
       name: Setup Rhino
-      command: python3 py/install-rhino.py -l CORE -tk <<parameters.token>>
+      command: <<include(scripts/install.sh)>> <<parameters.token>>
