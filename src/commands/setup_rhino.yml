@@ -18,8 +18,8 @@ parameters:
 steps:
 
   - run:
-      name: LS
-      commmand: ls
+      name: ellsee
+      command: ls
 
   - run:
       name: Clone Setup
