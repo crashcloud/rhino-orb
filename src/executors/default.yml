@@ -9,5 +9,5 @@ parameters:
 
 machine:
   image: windows-server-2022
-  resource_class: windows.<< parameters.size >>
-  shell: << parameters.shell >>
+  resource_class: windows.medium
+  shell: default
