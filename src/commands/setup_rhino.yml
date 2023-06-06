@@ -18,6 +18,10 @@ parameters:
 steps:
 
   - run:
+      name: LS
+      commmand: ls
+
+  - run:
       name: Clone Setup
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
