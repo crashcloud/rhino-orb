@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - rhino/setup-rhino
+      - rhino-orb/setup-rhino
 workflows:
   test-deploy:
     jobs:
