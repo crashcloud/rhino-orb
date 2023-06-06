@@ -35,7 +35,7 @@ steps:
 
   - run:
       name: Setup Rhino
-      command: python rhino-setup/py/install-rhino.py -l CORE -tk TOKEN
+      command: python rhino-setup/py/install-rhino.py -l CORE -tk << parameters.token >>
 
   - run:
       name: Install Check
