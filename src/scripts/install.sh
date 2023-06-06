@@ -1,0 +1,1 @@
+python rhino-setup/py/install-rhino.py -l CORE -tk <<parameters.token>>
