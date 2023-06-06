@@ -34,5 +34,9 @@ steps:
       command: ls *.exe
 
   - run:
+      name: show download
+      command: ls 'C:\Program Files\Rhino 7\System\*.exe'
+
+  - run:
       name: Setup Rhino
       command: python rhino-setup/py/install-rhino.py -l CORE -tk TOKEN
