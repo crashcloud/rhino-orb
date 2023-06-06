@@ -31,8 +31,8 @@ steps:
 
   - run:
       name: Download Rhino
-      command: python3 rhino-setup/py/download-rhino.py -v 7
+      command: python rhino-setup/py/download-rhino.py -v 7
 
   - run:
       name: Setup Rhino
-      command: python3 rhino-setup/py/install-rhino.py -l CORE -tk TOKEN
+      command: python rhino-setup/py/install-rhino.py -l CORE -tk TOKEN
