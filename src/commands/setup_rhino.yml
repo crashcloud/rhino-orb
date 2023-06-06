@@ -35,7 +35,7 @@ steps:
 
   - run:
       name: Setup Rhino
-      command: <<include(scripts/install.ps1) parameters.token >>
+      command: <<include(scripts/install.ps1 parameters.token)>>
 
   - run:
       name: Install Check
