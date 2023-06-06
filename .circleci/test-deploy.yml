@@ -3,6 +3,7 @@ orbs:
   # Your orb will be automatically injected here during the pipeline.
   # Reference your orb's jobs and commands below as they will exist when built.
   orb-tools: circleci/orb-tools@12.0
+  python: circleci/python@2.0.3
   # The orb definition is intentionally not included here. It will be injected into the pipeline.
   <orb-name>: {}
 
