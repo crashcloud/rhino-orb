@@ -29,8 +29,8 @@ workflows:
           filters: *filters
       # Triggers the next workflow in the Orb Development Kit.
       - orb-tools/continue:
+          orb_name: rhino
           pipeline_number: << pipeline.number >>
           vcs_type: << pipeline.project.type >>
-          orb_name: <orb-name>
           requires: [orb-tools/publish]
           filters: *filters

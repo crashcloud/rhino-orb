@@ -1,14 +1,8 @@
 version: 2.1
-
-description: >
-  Creates a base Windows image with Rhino installed for running windows based Rhino Unit/Integration tests
-
-# This information will be displayed in the orb registry and is not mandatory.
+description: Creates a base Windows image with Rhino installed for running windows based Rhino Unit/Integration tests
 display:
   home_url: "http://crsh.cloud"
   source_url: "https://github.com/crashcloud"
-
-# If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 orbs:
   win: circleci/windows@5.0
   python: circleci/python@2.1.1
