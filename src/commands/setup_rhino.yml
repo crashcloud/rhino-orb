@@ -27,12 +27,16 @@ steps:
 
   - run:
       name: ellsee2
-      command: ls src
+      command: ls rhino-setup
+
+  - run:
+      name: ellsee2
+      command: ls rhino-setup/py
 
   - run:
       name: Download Rhino
-      command: python3 py/download-rhino.py -v 7
+      command: python3 rhino-setup/py/download-rhino.py -v 7
 
   - run:
       name: Setup Rhino
-      command: python3 py/install-rhino.py -l CORE -tk TOKEN
+      command: python3 rhino-setup/py/install-rhino.py -l CORE -tk TOKEN
