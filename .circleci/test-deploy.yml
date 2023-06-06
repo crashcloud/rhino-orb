@@ -25,7 +25,7 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     machine:
-      image: 'windows-server-2022-gui:current'
+      image: 'windows-default'
       shell: 'powershell.exe -ExecutionPolicy Bypass'
     steps:
       - checkout
