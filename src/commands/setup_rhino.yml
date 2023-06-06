@@ -18,16 +18,16 @@ parameters:
 steps:
 
   - run:
+      name: Clone Setup
+      command: git clone https://github.com/crashcloud/rhino-setup.git
+
+  - run:
       name: ellsee
       command: ls src
 
   - run:
       name: ellsee2
       command: ls src/py
-
-  - run:
-      name: Clone Setup
-      command: git clone https://github.com/crashcloud/rhino-setup.git
 
   - run:
       name: Download Rhino
