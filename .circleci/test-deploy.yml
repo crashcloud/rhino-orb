@@ -25,8 +25,9 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     machine:
-      image: 'windows-default'
-      shell: 'powershell.exe -ExecutionPolicy Bypass'
+      image: 'windows-server-2022-gui:current'
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - checkout
       # Run your orb's commands to validate them.
