@@ -27,7 +27,7 @@ steps:
 
   - run:
       name: Setup wget
-      command: python3 pip install wget
+      command: pip install wget
 
   - run:
       name: Download Rhino
