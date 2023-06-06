@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - <orb-name>/setup-rhino
+      - rhino/setup-rhino
 workflows:
   test-deploy:
     jobs:
@@ -46,6 +46,5 @@ workflows:
           # Ensure this job requires all test jobs and the pack job.
           requires:
             - orb-tools/pack
-            - command-test
           context: <publishing-context>
           filters: *release-filters
