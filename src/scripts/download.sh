@@ -5,6 +5,7 @@ FULLVERSION=$(circleci env subst "${PARAM_FULLVERSION}")
 CULTURE=$(circleci env subst "${PARAM_CULTURE}")
 TOKEN=$(circleci env subst "${PARAM_TOKEN}")
 
-python rhino-setup/py/install-rhino.py \
-        -l CORE \
-        -tk "${TOKEN}"
+python rhino-setup/py/download-rhino.py \
+        -v "${VERSION}" \
+        -fv "${FULLVERSION}" \
+        -c "${CULTURE}"

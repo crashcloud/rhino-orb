@@ -27,7 +27,11 @@ steps:
 
   - run:
       name: Download Rhino
-      command: python rhino-setup/py/download-rhino.py -v 7
+      environment:
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_FULLVERSION: <<parameters.fullversion>
+        PARAM_CULTURE: <<parameters.culture>>
+      command: <<include(scripts/download.sh)>>
 
   - run:
       name: show download
@@ -36,6 +40,9 @@ steps:
   - run:
       name: Setup Rhino
       environment:
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_FULLVERSION: <<parameters.fullversion>
+        PARAM_CULTURE: <<parameters.culture>>
         PARAM_TOKEN: <<parameters.token>>
       command: <<include(scripts/install.sh)>>
 
