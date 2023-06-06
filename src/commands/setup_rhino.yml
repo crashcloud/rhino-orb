@@ -23,11 +23,11 @@ steps:
 
   - run:
       name: ellsee
-      command: ls src
+      command: ls
 
   - run:
       name: ellsee2
-      command: ls src/py
+      command: ls src
 
   - run:
       name: Download Rhino
