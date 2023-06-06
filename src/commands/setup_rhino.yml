@@ -19,7 +19,11 @@ steps:
 
   - run:
       name: ellsee
-      command: ls
+      command: ls src
+
+  - run:
+      name: ellsee2
+      command: ls src/py
 
   - run:
       name: Clone Setup
