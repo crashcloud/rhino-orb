@@ -1,1 +1,0 @@
-python3 py/download-rhino.py -v <<parameters.version>> -fv <<parameters.fullversion>> -c <<parameters.culture>>
