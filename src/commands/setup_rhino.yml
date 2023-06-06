@@ -26,12 +26,8 @@ steps:
       command: ls
 
   - run:
-      name: ellsee2
-      command: ls rhino-setup
-
-  - run:
-      name: ellsee2
-      command: ls rhino-setup/py
+      name: Setup wget
+      command: python3 pip install wget
 
   - run:
       name: Download Rhino
