@@ -22,16 +22,16 @@ steps:
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
   - run:
-      name: ellsee
-      command: ls
-
-  - run:
       name: Setup wget
       command: pip install wget
 
   - run:
       name: Download Rhino
       command: python rhino-setup/py/download-rhino.py -v 7
+
+  - run:
+      name: show download
+      command: ls *.exe
 
   - run:
       name: Setup Rhino
