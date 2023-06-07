@@ -29,7 +29,7 @@ steps:
       name: Download Rhino
       environment:
         PARAM_VERSION: <<parameters.version>>
-        PARAM_FULLVERSION: <<parameters.fullversion>
+        PARAM_FULLVERSION: <<parameters.fullversion>>
         PARAM_CULTURE: <<parameters.culture>>
       command: <<include(scripts/download.sh)>>
 
