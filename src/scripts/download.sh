@@ -1,4 +1,6 @@
-#!/bin/sh
+
+Write-Host $Env:PARAM_VERSION
+Write-Host $Env:VERSION
 
 VERSION=$(circleci env subst "$PARAM_VERSION")
 FULLVERSION=$(circleci env subst "$PARAM_FULLVERSION")
