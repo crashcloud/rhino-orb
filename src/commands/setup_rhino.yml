@@ -28,9 +28,9 @@ steps:
   - run:
       name: Download Rhino
       environment:
-        VERSION: <<parameters.version>>
-        FULLVERSION: <<parameters.fullversion>>
-        CULTURE: <<parameters.culture>>
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_FULLVERSION: <<parameters.fullversion>>
+        PARAM_CULTURE: <<parameters.culture>>
       command: <<include(scripts/download.sh)>>
 
   - run:
@@ -40,7 +40,7 @@ steps:
   - run:
       name: Setup Rhino
       environment:
-        TOKEN: <<parameters.token>>
+        PARAM_TOKEN: <<parameters.token>>
       command: <<include(scripts/install.sh)>>
 
   - run:
