@@ -40,9 +40,6 @@ steps:
   - run:
       name: Setup Rhino
       environment:
-        PARAM_VERSION: <<parameters.version>>
-        PARAM_FULLVERSION: <<parameters.fullversion>
-        PARAM_CULTURE: <<parameters.culture>>
         PARAM_TOKEN: <<parameters.token>>
       command: <<include(scripts/install.sh)>>
 
