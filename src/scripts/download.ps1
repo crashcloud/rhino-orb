@@ -2,8 +2,8 @@
 
 Write-Host "This is powershell!"
 
-Write-Host $ENV:VERSION
-Write-Host $ENV:FULLVERSION
-Write-Host $ENV:CULTURE
+Write-Host $ENV:PARAM_VERSION
+Write-Host $ENV:PARAM_FULLVERSION
+Write-Host $ENV:PARAM_CULTURE
 
-python rhino-setup/py/download-rhino.py -v $ENV:PARAM_VERSION -fv $ENV:FULLVERSION -c $ENV:CULTURE
+python rhino-setup/py/download-rhino.py -v $ENV:PARAM_VERSION -fv $ENV:PARAM_FULLVERSION -c $ENV:PARAM_CULTURE
