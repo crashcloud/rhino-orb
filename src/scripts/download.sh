@@ -1,10 +1,8 @@
 #!/bin/sh
 
-ORB_EVAL_PROFILE="$(circleci env subst "${ORB_EVAL_PROFILE}")"
-
-VERSION="$(circleci env subst "${VERSION}")"
-FULLVERSION="$(circleci env subst "${FULLVERSION}")"
-CULTURE="$(circleci env subst "${CULTURE}")"
+VERSION=$(circleci env subst "${PARAM_VERSION}")
+FULLVERSION=$(circleci env subst "${PARAM_FULLVERSION}")
+CULTURE=$(circleci env subst "${PARAM_CULTURE}")
 
 echo "${VERSION}"
 echo "${FULLVERSION}"

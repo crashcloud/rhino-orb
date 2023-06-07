@@ -2,19 +2,19 @@ description: This command downloads and installs Rhino
 parameters:
   version:
     type: string
-    default: '7'
-    description: 'Which version of rhino should be installed, 6, 7 or 8'
+    default: "7"
+    description: "Which version of rhino should be installed, 6, 7 or 8"
   fullversion:
     type: string
-    default: 'latest'
-    description: 'What is the exact version of rhino that should be installed?'
+    default: "latest"
+    description: "What is the exact version of rhino that should be installed?"
   culture:
     type: string
-    default: 'en-us'
-    description: 'What is the exact culture for Rhino that should be installed?'
+    default: "en-us"
+    description: "What is the exact culture for Rhino that should be installed?"
   token:
     type: string
-    description: 'The core hour billing token'
+    description: "The core hour billing token"
 steps:
 
   - run:
