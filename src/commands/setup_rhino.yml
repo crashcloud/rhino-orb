@@ -41,7 +41,7 @@ steps:
       name: Setup Rhino
       environment:
         PARAM_TOKEN: <<parameters.token>>
-      command: <<include(scripts/install.sh)>>
+      command: <<include(scripts/install.ps1)>>
 
   - run:
       name: Install Check

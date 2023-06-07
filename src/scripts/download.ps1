@@ -2,15 +2,8 @@
 
 Write-Host "This is powershell!"
 
-Write-Host $Env:PARAM_VERSION
-Write-Host $Env:VERSION
+Write-Host $ENV:VERSION
+Write-Host $ENV:FULLVERSION
+Write-Host $ENV:CULTURE
 
-VERSION=$(circleci env subst "$PARAM_VERSION")
-FULLVERSION=$(circleci env subst "$PARAM_FULLVERSION")
-CULTURE=$(circleci env subst "$PARAM_CULTURE")
-
-echo "$VERSION"
-echo "$FULLVERSION"
-echo "$CULTURE"
-
-python rhino-setup/py/download-rhino.py -v "$VERSION" -fv "$FULLVERSION" -c "$CULTURE"
+python rhino-setup/py/download-rhino.py -v $ENV:PARAM_VERSION -fv $ENV:FULLVERSION -c $ENV:CULTURE
