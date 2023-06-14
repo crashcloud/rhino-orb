@@ -12,9 +12,6 @@ parameters:
     type: string
     default: "en-us"
     description: "What is the exact culture for Rhino that should be installed?"
-  token:
-    type: string
-    description: "The core hour billing token"
 steps:
 
   - run:
@@ -39,8 +36,6 @@ steps:
 
   - run:
       name: Setup Rhino
-      environment:
-        PARAM_TOKEN: <<parameters.token>>
       command: <<include(scripts/install.ps1)>>
 
   - run:
