@@ -33,6 +33,7 @@ jobs:
       # Run your orb's commands to validate them.
       - rhino/setup_rhino:
           version: '7'
+          token: $RHINO_CORE_TOKEN
 workflows:
   test-deploy:
     jobs:
