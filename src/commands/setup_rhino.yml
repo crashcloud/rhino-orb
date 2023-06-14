@@ -37,7 +37,7 @@ steps:
   - run:
       name: Test
       command: |
-        python install-rhino.py "$env:<< parameters.token >>" "<< parameters.version >>"
+        python install-rhino.py "$env:<< parameters.token >>"
       shell: powershell
       environment:
         PARAM_TOKEN: << parameters.token >>
