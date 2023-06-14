@@ -15,7 +15,7 @@ parameters:
   token:
     type: string
     description: "The core hour billing token"
-    default: RHINO_CORE_TOKEN
+    default: $RHINO_CORE_TOKEN
 steps:
 
   - run:
