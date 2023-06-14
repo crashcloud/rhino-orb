@@ -35,14 +35,6 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - run:
-      name: Test
-      command: |
-        python scripts/rhino-setup/py/install-rhino.py "$env:<< parameters.token >>"
-      shell: powershell
-      environment:
-        PARAM_TOKEN: << parameters.token >>
-
-  - run:
       name: show download
       command: ls *.exe
 
