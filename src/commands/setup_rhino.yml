@@ -35,7 +35,6 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - run:
-
       name: Test
       command: |
         python install-rhino.py "$env:<< parameters.token >>" "<< parameters.version >>"
@@ -43,6 +42,7 @@ steps:
       environment:
         PARAM_TOKEN: << parameters.token >>
 
+  - run:
       name: show download
       command: ls *.exe
 
