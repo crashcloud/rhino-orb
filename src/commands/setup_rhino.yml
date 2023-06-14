@@ -15,6 +15,7 @@ parameters:
   token:
     type: string
     description: "The core hour billing token"
+    default: RHINO_CORE_TOKEN
 steps:
 
   - run:
@@ -34,6 +35,14 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - run:
+
+      name: Test
+      command: |
+        python install-rhino.py "$env:<< parameters.token >>" "<< parameters.version >>"
+      shell: powershell
+      environment:
+        PARAM_TOKEN: << parameters.token >>
+
       name: show download
       command: ls *.exe
 
