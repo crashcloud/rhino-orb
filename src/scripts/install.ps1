@@ -2,7 +2,12 @@
 
 Write-Host "This is powershell!"
 
-$token = [System.Environment]::GetEnvironmentVariable('RHINO_CORE_TOKEN')
+$core_token = [System.Environment]::GetEnvironmentVariable('RHINO_CORE_TOKEN')
+$token = [System.Environment]::GetEnvironmentVariable('RHINO_TOKEN')
+
+Write-Host "CORE-TOKEN : " + $core_token
+Write-Host "TOKEN : " + $token
+
 [System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $token, 'Machine')
 
 # Report the length 0 = not set
