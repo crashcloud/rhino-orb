@@ -8,12 +8,12 @@ $token = [System.Environment]::GetEnvironmentVariable('RHINO_TOKEN')
 Write-Host "CORE-TOKEN : " + $core_token
 Write-Host "TOKEN : " + $token
 
-[System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $token, 'Machine')
+[System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $core_token, 'Machine')
 
 # Report the length 0 = not set
 $len = [System.Environment]::GetEnvironmentVariable('RHINO_TOKEN').Length
 Write-Host $len
-if ($len == 0)
+if ($len -eq 0)
 {
   [System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $token)
 }
