@@ -11,11 +11,7 @@ Write-Host "TOKEN : " + $token
 [System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $core_token, 'Machine')
 
 # Report the length 0 = not set
-$len = [System.Environment]::GetEnvironmentVariable('RHINO_TOKEN').Length
-Write-Host $len
-if ($len -eq 0)
-{
-  [System.Environment]::SetEnvironmentVariable('RHINO_TOKEN', $token)
-}
+Write-Host = [System.Environment]::GetEnvironmentVariable('RHINO_TOKEN').Length
+Write-Host = $core_token.Length
 
-python rhino-setup/py/install-rhino.py -l CORE -tk $token
+python rhino-setup/py/install-rhino.py -l CORE -tk $core_token
