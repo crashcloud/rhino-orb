@@ -2,5 +2,25 @@
 
 $rhino_exe = "C:\Program Files\Rhino 7\System\Rhino.exe"
 
-# https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
-Start-Process -FilePath $rhino_exe -ArgumentList "/nosplash /runscript=`"-Exit`"" -Wait
+
+$timeout = 60000
+$counter = 0
+
+$proc = Start-Process -FilePath $rhino_exe -ArgumentList "/nosplash /runscript=`"-Exit`"" -PassThru
+while($counter -le $timeout)
+{
+    # https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
+    if ($proc.HasExited)
+    {
+        Write-Host "Rhino exited naturally"
+        exit 0
+    }
+
+    Start-Sleep -Milliseconds 500
+    
+    Write-Host "Timeout $counter/$timeout"
+    $counter += 500;
+}
+
+exit 1
+
