@@ -45,3 +45,7 @@ steps:
   - run:
       name: Run Rhino
       command: <<include(scripts/first_run.ps1)>>
+
+  - run:
+      name: Run Rhino
+      command: <<include(scripts/first_run.ps1)>>
