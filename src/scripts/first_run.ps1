@@ -22,5 +22,3 @@ while($counter -le $timeout)
     $counter += 500;
 }
 
-exit 1
-
