@@ -5,11 +5,9 @@
 
 --->
 
-A project template for Orbs.
+<img align="left" width="256" src="art/logo.png" /> 
 
-This repository is designed to be automatically ingested and modified by the CircleCI CLI's `orb init` command.
-
-_**Edit this area to include a custom title and description.**_
+_**An Orb build on Windows Server 2022 with Rhino Pre-installed, ready for unit testing.**_
 
 ---
 
