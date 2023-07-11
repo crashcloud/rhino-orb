@@ -20,7 +20,7 @@ steps:
 
   - restore_cache:
       keys:
-      - rhino-<<parameters.version>>-<<parameters.fullversion>
+        - rhino-<<parameters.version>>-<<parameters.fullversion>
 
   - run:
       name: Download Rhino
@@ -46,7 +46,7 @@ steps:
   - run:
       name: Install Check
       command: ls 'C:\Program Files\Rhino 7\System\*.exe'
-  
+
   - run:
       name: Remove Downloads
       command: Remove-Item *.exe
