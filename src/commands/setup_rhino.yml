@@ -18,10 +18,6 @@ steps:
       name: Clone Setup
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
-  - restore_cache:
-      keys:
-        - rhino-<<parameters.version>>-<<parameters.fullversion>>
-
   # If we find none, this returns success
   - run:
       name: Is Cache Related
