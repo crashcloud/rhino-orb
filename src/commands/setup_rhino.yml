@@ -41,3 +41,7 @@ steps:
   - run:
       name: Install Check
       command: ls 'C:\Program Files\Rhino 7\System\*.exe'
+  
+  - run:
+      name: Remove Downloads
+      command: Remove-Item *.exe
