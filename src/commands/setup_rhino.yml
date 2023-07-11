@@ -34,8 +34,8 @@ steps:
         - Rhino*.exe
     
   - run: 
-    name: Install Wget
-    command: pip install wget
+      name: Install Wget
+      command: pip install wget
 
   - run:
       name: Download Rhino
