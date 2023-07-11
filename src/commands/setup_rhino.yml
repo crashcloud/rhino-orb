@@ -44,7 +44,7 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - save_cache:
-      key: rhino-<<parameters.version>>-<<parameters.fullversion>
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>>
       paths:
         - Rhino*.exe
 
