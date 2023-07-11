@@ -26,27 +26,26 @@ steps:
       name: Is Cache Related
       command: $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
 
-  - save_cache:
-      key: rhino-<<parameters.version>>-<<parameters.fullversion>>
-      paths:
-        - Rhino*.exe
+  - when:
+      condition:
+          equal: [ true, ${FOUND_CACHE} ]
+      steps:
+        - run:
+            name: Install Wget
+            command: pip install wget
 
-  - run:
-      name: Install Wget
-      command: pip install wget
+        - run:
+            name: Download Rhino
+            environment:
+              PARAM_VERSION: <<parameters.version>>
+              PARAM_FULLVERSION: <<parameters.fullversion>>
+              PARAM_CULTURE: <<parameters.culture>>
+            command: <<include(scripts/download.ps1)>>
 
-  - run:
-      name: Download Rhino
-      environment:
-        PARAM_VERSION: <<parameters.version>>
-        PARAM_FULLVERSION: <<parameters.fullversion>>
-        PARAM_CULTURE: <<parameters.culture>>
-      command: <<include(scripts/download.ps1)>>
-
-  - save_cache:
-      key: rhino-<<parameters.version>>-<<parameters.fullversion>>
-      paths:
-        - Rhino*.exe
+        - save_cache:
+            key: rhino-<<parameters.version>>-<<parameters.fullversion>>
+            paths:
+              - Rhino*.exe
 
   - run:
       name: show download
