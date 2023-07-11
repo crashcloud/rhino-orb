@@ -25,9 +25,7 @@ steps:
   # If we find none, this returns success
   - run:
       name: Is Cache Related
-      command: |
-        echo 'export CACHE=(ls *.exe):"$CACHE"' >> "$DOWNLOAD"
-        source "$DOWNLOAD"
+      command: <<include(scripts/cache.sh)>>
       shell: bash.exe
 
   - when:
