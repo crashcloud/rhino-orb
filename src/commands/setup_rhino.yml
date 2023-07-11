@@ -7,11 +7,11 @@ parameters:
   fullversion:
     type: string
     default: "latest"
-    description: "What is the exact version of rhino that should be installed?"
+    description: "What is the exact version of rhino that should be installed? e.g. 7.30.23163.13001. Not every version is available on every platform."
   culture:
     type: string
     default: "en-us"
-    description: "What is the exact culture for Rhino that should be installed?"
+    description: "What is the exact culture for Rhino that should be installed? (WIP)"
 steps:
 
   - run:
@@ -41,7 +41,7 @@ steps:
   - run:
       name: Install Check
       command: ls 'C:\Program Files\Rhino 7\System\*.exe'
-  
+
   - run:
       name: Remove Downloads
       command: Remove-Item *.exe

@@ -1,15 +1,18 @@
 # Rhino Orb
 
-<!---
-[![CircleCI Build Status](https://circleci.com/gh/<organization>/<project-name>.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/<organization>/<project-name>) [![CircleCI Orb Version](https://badges.circleci.com/orbs/<namespace>/<orb-name>.svg)](https://circleci.com/developer/orbs/orb/<namespace>/<orb-name>) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/<organization>/<project-name>/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
-
---->
+[![CircleCI Build Status](https://circleci.com/gh/crashcloud/rhino-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/crashcloud/rhino-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/crashcloud/rhino-orb.svg)](https://circleci.com/developer/orbs/orb/crashcloud/rhino-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/crashcloud/rhino-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 <img align="left" width="256" src="art/logo.png" /> 
 
 _**An Orb build on Windows Server 2022 with Rhino Pre-installed, ready for unit testing.**_
 
 ---
+
+## Important Info
+
+You will need to have an environment variable set up in your project or context settings called RHINO_TOKEN. This Orb can only use Core Hour Billing See [thi guide](https://developer.rhino3d.com/guides/compute/core-hour-billing/) .
+
+This Orb is a WIP. And will have some issues. Please bear with and create an issue with any problems you have.
 
 ## Resources
 
