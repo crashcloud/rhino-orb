@@ -25,11 +25,7 @@ steps:
   # If we find none, this returns success
   - run:
       name: Is Cache Related
-      command: |
-        $count = (ls *.exe).Count
-        Write-Host $count
-        $ENV:DOWNLOAD = $count -le 0
-        exit $count
+      command: <<include(scripts/cache_check.ps1)>>
 
   - when:
       condition:
