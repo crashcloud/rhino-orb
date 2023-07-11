@@ -28,7 +28,7 @@ steps:
 
   - when:
       condition:
-        equal: [ false, on_fail ]
+        equal: [ true, on_fail ]
       steps:
         - run:
             name: Install Wget
