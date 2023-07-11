@@ -18,17 +18,22 @@ steps:
       name: Clone Setup
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
+  - restore_cache:
+      keys:
+        - rhino-<<parameters.version>>-<<parameters.fullversion>>
+
   # If we find none, this returns success
   - run:
       name: Is Cache Related
       command: |
         $count = (ls *.exe).Count
         Write-Host $count
+        $ENV:DOWNLOAD = $count -le 0
         exit $count
 
   - when:
       condition:
-        equal: [ true, on_fail ]
+        equal: [ true, $DOWNLOAD ]
       steps:
         - run:
             name: Install Wget
@@ -50,6 +55,7 @@ steps:
   - run:
       name: show download
       command: ls *.exe
+      when: always
 
   - run:
       name: Setup Rhino
@@ -58,7 +64,9 @@ steps:
   - run:
       name: Install Check
       command: ls 'C:\Program Files\Rhino 7\System\*.exe'
+      when: always
 
   - run:
       name: Remove Downloads
       command: Remove-Item *.exe
+      when: always
