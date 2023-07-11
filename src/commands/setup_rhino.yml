@@ -22,14 +22,15 @@ steps:
       keys:
         - rhino-<<parameters.version>>-<<parameters.fullversion>>
 
+  # If we find none, this returns success
   - run:
       name: Is Cache Related
       command: |
-        $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
+        exit (ls *.exe).Count
 
   - when:
       condition:
-        equal: [ true, $FOUND_CACHE ]
+        equal: [ false, on_fail ]
       steps:
         - run:
             name: Install Wget
