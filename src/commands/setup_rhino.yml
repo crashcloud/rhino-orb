@@ -25,12 +25,14 @@ steps:
   # If we find none, this returns success
   - run:
       name: Is Cache Related
-      command: <<include(scripts/cache_check.ps1)>>
+      command: |
+        echo 'export CACHE=(ls *.exe):"$CACHE"' >> "$DOWNLOAD"
+        source "$DOWNLOAD"
+      shell: bash.exe
 
   - when:
       condition:
-        not:
-          - equal: [ false, $DOWNLOAD ]
+        - equal: [ false, $DOWNLOAD ]
       steps:
         - run:
             name: Install Wget
