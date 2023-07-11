@@ -7,14 +7,14 @@ parameters:
   fullversion:
     type: string
     default: "latest"
-    description: "What is the exact version of rhino that should be installed?"
+    description: "What is the exact version of rhino that should be installed?" e.g. 7.30.23163.13001. Not every version is available on every platform.
   culture:
     type: string
     default: "en-us"
-    description: "What is the exact culture for Rhino that should be installed?"
+    description: "What is the exact culture for Rhino that should be installed? (WIP)"
 steps:
 
-  - run:
+  - run:  
       name: Clone Setup
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
