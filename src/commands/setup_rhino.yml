@@ -24,11 +24,12 @@ steps:
 
   - run:
       name: Is Cache Related
-      command: $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
+      command: |
+        $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
 
   - when:
       condition:
-          equal: [ true, ${FOUND_CACHE} ]
+        equal: [ true, $FOUND_CACHE ]
       steps:
         - run:
             name: Install Wget
