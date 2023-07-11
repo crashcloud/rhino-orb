@@ -23,6 +23,19 @@ steps:
         - rhino-<<parameters.version>>-<<parameters.fullversion>>
 
   - run:
+      name: Is Cache Related
+      command: $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
+      environment:
+          FOUND_CACHE: postgres://conductor:@localhost:5432/conductor_test
+
+  - save_cache:
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>>
+      paths:
+        - Rhino*.exe
+    
+  - run: pip install wget
+
+  - run:
       name: Download Rhino
       environment:
         PARAM_VERSION: <<parameters.version>>
@@ -31,7 +44,7 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - save_cache:
-      key: rhino-<<parameters.version>>-<<parameters.fullversion>>
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>
       paths:
         - Rhino*.exe
 
