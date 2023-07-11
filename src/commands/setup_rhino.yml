@@ -18,9 +18,9 @@ steps:
       name: Clone Setup
       command: git clone https://github.com/crashcloud/rhino-setup.git
 
-  - run:
-      name: Setup wget
-      command: pip install wget
+  - restore_cache:
+      keys:
+      - rhino-<<parameters.version>>-<<parameters.fullversion>
 
   - run:
       name: Download Rhino
@@ -29,6 +29,11 @@ steps:
         PARAM_FULLVERSION: <<parameters.fullversion>>
         PARAM_CULTURE: <<parameters.culture>>
       command: <<include(scripts/download.ps1)>>
+
+  - save_cache:
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>
+      paths:
+        - Rhino*.exe
 
   - run:
       name: show download
