@@ -33,7 +33,9 @@ steps:
       paths:
         - Rhino*.exe
     
-  - run: pip install wget
+  - run: 
+    name: Install Wget
+    command: pip install wget
 
   - run:
       name: Download Rhino
