@@ -29,7 +29,8 @@ steps:
 
   - when:
       condition:
-        equal: [ true, $DOWNLOAD ]
+        not:
+          - equal: [ false, $DOWNLOAD ]
       steps:
         - run:
             name: Install Wget
@@ -49,7 +50,7 @@ steps:
               - Rhino*.exe
 
   - run:
-      name: show download
+      name: show installer
       command: ls *.exe
       when: always
 
@@ -60,7 +61,6 @@ steps:
   - run:
       name: Install Check
       command: ls 'C:\Program Files\Rhino 7\System\*.exe'
-      when: always
 
   - run:
       name: Remove Downloads
