@@ -20,7 +20,7 @@ steps:
 
   - restore_cache:
       keys:
-        - rhino-<<parameters.version>>-<<parameters.fullversion>
+        - rhino-<<parameters.version>>-<<parameters.fullversion>>
 
   - run:
       name: Download Rhino
