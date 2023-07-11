@@ -25,15 +25,13 @@ steps:
   - run:
       name: Is Cache Related
       command: $ENV:FOUND_CACHE = (ls *.exe).Count -gt 0
-      environment:
-          FOUND_CACHE: postgres://conductor:@localhost:5432/conductor_test
 
   - save_cache:
       key: rhino-<<parameters.version>>-<<parameters.fullversion>>
       paths:
         - Rhino*.exe
-    
-  - run: 
+
+  - run:
       name: Install Wget
       command: pip install wget
 
