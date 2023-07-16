@@ -31,17 +31,5 @@ steps:
       command: <<include(scripts/download.ps1)>>
 
   - run:
-      name: show download
-      command: ls *.exe
-
-  - run:
       name: Setup Rhino
       command: <<include(scripts/install.ps1)>>
-
-  - run:
-      name: Install Check
-      command: ls 'C:\Program Files\Rhino 7\System\*.exe'
-
-  - run:
-      name: Remove Downloads
-      command: Remove-Item *.exe
