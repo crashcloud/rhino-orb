@@ -30,26 +30,19 @@ steps:
         - "*.exe"
 
   - run:
-      name: Check for Cache
-      command: <<include(scripts/cache_check.ps1)>>
-
-  - run:
       name: Download Rhino
       environment:
         PARAM_VERSION: <<parameters.version>>
         PARAM_FULLVERSION: <<parameters.fullversion>>
         PARAM_CULTURE: <<parameters.culture>>
       command: <<include(scripts/download.ps1)>>
-      when: on_fail
 
   - save_cache:
       name: Cache Nuget Packages
       key: rhino-<<parameters.version>>-<<parameters.fullversion>>-{{ .Environment.CACHE_VERSION }}
       paths:
         - "*.exe"
-      when: always
 
   - run:
       name: Setup Rhino
       command: <<include(scripts/install.ps1)>>
-      when: always
