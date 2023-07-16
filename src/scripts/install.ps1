@@ -12,7 +12,12 @@ Write-Host = $token.Length
 python rhino-setup/py/install-rhino.py -l CORE -tk $token
 
 # show the install(s)
-Get-ChildItem 'C:\Program Files\Rhino *\System\*.exe'
+$installs = Get-ChildItem 'C:\Program Files\Rhino *\System\*.exe'
+if ($installs -eq 0)
+{
+    Write-Host "No Rhino install found!"
+    exit 1
+}
 
 # Remove any download cache
 Remove-Item *.exe

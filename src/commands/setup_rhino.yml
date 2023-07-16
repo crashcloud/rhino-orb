@@ -27,7 +27,7 @@ steps:
       name: Restore Rhino Install Cache
       key: rhino-<<parameters.version>>-<<parameters.fullversion>>-{{ .Environment.CACHE_VERSION }}
       paths:
-        - "*.exe"
+        - "./rhino-setup/py/*.exe"
 
   - run:
       name: Download Rhino
@@ -41,7 +41,7 @@ steps:
       name: Cache Nuget Packages
       key: rhino-<<parameters.version>>-<<parameters.fullversion>>-{{ .Environment.CACHE_VERSION }}
       paths:
-        - "*.exe"
+        - "./rhino-setup/py/*.exe"
 
   - run:
       name: Setup Rhino
