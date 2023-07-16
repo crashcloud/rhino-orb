@@ -22,6 +22,17 @@ steps:
       name: Setup wget
       command: pip install wget
 
+  # https://support.circleci.com/hc/en-us/articles/115015426888-Clear-project-dependency-cache
+  - restore_cache:
+      name: Restore Rhino Install Cache
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>>-{{ .Environment.CACHE_VERSION }}
+      paths:
+        - "*.exe"
+
+  - run:
+      name: Check for Cache
+      command: <<include(scripts/cache_check.ps1)>>
+
   - run:
       name: Download Rhino
       environment:
@@ -29,7 +40,16 @@ steps:
         PARAM_FULLVERSION: <<parameters.fullversion>>
         PARAM_CULTURE: <<parameters.culture>>
       command: <<include(scripts/download.ps1)>>
+      when: on_fail
+
+  - save_cache:
+      name: Cache Nuget Packages
+      key: rhino-<<parameters.version>>-<<parameters.fullversion>>-{{ .Environment.CACHE_VERSION }}
+      paths:
+        - "*.exe"
+      when: always
 
   - run:
       name: Setup Rhino
       command: <<include(scripts/install.ps1)>>
+      when: always
